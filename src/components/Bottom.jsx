@@ -7,9 +7,9 @@ import Terminal from '../assets/Termianl2.png';
 import Settings from '../assets/Settings2.png';
 import Help from '../assets/Help.png';
 
-const Bottom = () => {
+const Bottom = (props) => {
 
-
+console.log(props)
       const [openBrave, setOpenBrave] = useState(false);
       const [openApp, setOpenApp] = useState(false);
       const [openVSCode, setOpenVSCode] = useState(false);
@@ -119,11 +119,11 @@ const Bottom = () => {
               <button onClick={() => setOpenHelp(false)}>Close Help</button>
             </div>
           )}
-             {openFolder && (
+             {openFolder || props.open? (
             <div style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-cyan-900 text-white p-5">
-              <button onClick={() => setopenFolder(false)}>Close Help</button>
+              <button onClick={() => setopenFolder(false)|| props.setFolder(false)}>Close Folder</button>
             </div>
-          )}
+          ):``}
           </>
   )
 }

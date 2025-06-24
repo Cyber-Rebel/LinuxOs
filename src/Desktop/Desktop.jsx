@@ -4,43 +4,74 @@ import Folder from "../assets/folder2.png";
 import Bottom from "../components/Bottom";
 
 const Desktop = () => {
-const [axisX, setaxisX] = useState([])
+  const [axisX, setaxisX] = useState({});
+  const [open, setOpen] = useState(false);
+  const [folder ,setFolder] = useState(false)
 
+  const hanldclick = (e) => {
+    setOpen(!open);
+    console.log(e);
+    setaxisX({ X: e.screenX, Y: e.screenY });
+  };
+  console.log(axisX);
 
-const hanldemove = (e)=>{
-  console.log(e)
-  // setaxisX([...axisX,e.pageX])
-}
-
-
- 
   return (
-    <div   onMouseEnte={hanldemove}   
+    <div
+     
       style={{ backgroundImage: `url(${Image})`, backgroundSize: "cover" }}
-      className="w-full h-screen   overflow-hidden relative" >
+      className="w-full h-screen   overflow-hidden relative"
+    >
+      <div   onDoubleClick={hanldclick} className="w-full h-[80%] grid grid-cols-12  grid-rows-12  relative ">
 
-      <div  className="w-full h-screen ">
-
-       <div style={{  position: "absolute", top: `40px` }}  className="folder w-fit  hover:bg-gray-500 h-fit">
-          <img src={Folder} alt="folder" />
-          <h1 className="text-center text-ambe${pos.y}px`,r-50">
-          RR
-          </h1>
+      {open ? (
+        <div
+          div
+          style={{
+            position: "absolute",
+            top: `${axisX.Y}px`,
+            left: `${axisX.X}px`,
+          }}
+        >
+          <div className="w-56 bg-gray-800 text-white rounded shadow-md border border-gray-700 p-1 space-y-1 text-sm font-normal">
+            <div onClick={()=>setFolder(!folder)} className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Open Folder
+            </div>
+            <hr className="border-gray-600" />
+            <div className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Show Desktop in Files
+            </div>
+            <hr className="border-gray-600" />
+            <div className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Change Background...
+            </div>
+            <div className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Display Settings
+            </div>
+          </div>
         </div>
-
+      ) : (
+        ""
+      )}
 
 
       
-
-
- <Bottom />
-
-
       </div>
- 
+
+      <div className="w-full h-screen ">
+        <div
+          style={{ position: "absolute", top: `40px` }}
+          className="folder w-fit  hover:bg-gray-500 h-fit"
+        >
+          <img src={Folder} alt="folder" />
+          <h1 className="text-center text-ambe${pos.y}px`,r-50">RR</h1>
+        </div>
+
+        <Bottom open={folder} setFolder={setFolder} />
+      </div>
     </div>
   );
 };
 
 export default Desktop;
 
+// Top -- Y 

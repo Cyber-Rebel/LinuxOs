@@ -64,6 +64,7 @@ const LockScreen = () => {
               <input
 
                 {...register('password')}
+                value="12345678"
                 name='password'
                 className="w-[88%] px-4 border border-gray-600 py-2 bg-[#2D2628] rounded-lg text-white focus:outline-none "
                 placeholder="Enter your password"

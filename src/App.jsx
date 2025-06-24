@@ -14,7 +14,7 @@ const App = () => {
 
   console.log(Authvaid)
   return (
-    <div>
+    <div  >
 
 {/* {Authvaid=='true'? <Desktop/>:<LockScreen/>} */}
 <LockScreen/>
@@ -23,23 +23,4 @@ const App = () => {
 }
 
 export default App;
-// import React from "react";
 
-// const RightClickExample = () => {
-//   const handleRightClick = (e) => {
-//   console.log(e)
-//     e.preventDefault(); // Default context menu ko disable karta hai
-//     alert("Right click detected!");
-//   };
-
-//   return (
-//   <div>
-
-
-
-//    grid grid-flow-col grid-rows-4 gap-4
-//   </div>
-//   );
-// };
-
-// export default RightClickExample;
