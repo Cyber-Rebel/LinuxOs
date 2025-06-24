@@ -109,9 +109,45 @@ console.log(props)
               <button onClick={() => setOpenTerminal(false)}>Close Terminal</button>
             </div>
           )}
-          {openSettings && (
-            <div style={{ position: 'absolute', top: '50%' }} className="w-[30%] h-[40%] bg-pink-500 p-5">
-              <button onClick={() => setOpenSettings(false)}>Close Settings</button>
+         
+          {openSettings && (<div style={{ position: 'absolute', top: '10%' }} className="w-[30%] h-[40%] flex  cursor-n-resize resize overflow-auto  bg-pink-500  ">
+            <div className='bg-gray-800 w-[40%] '>
+                <div className="w-full bg-gray-800 text-white rounded shadow-md border border-gray-700 p-1 px-4 space-y-1 text-[120%]   font-normal">
+            <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              System Info
+            </div>
+             <hr className="border-gray-600 w-full" />
+             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Power
+            </div>
+             <hr className="border-gray-600" />
+             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Change Backgruoud
+            </div>
+ <hr className="border-gray-600 " />
+                         <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
+              Network Info
+            </div>
+ <hr className="border-gray-600" />
+
+   <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
+              Battery Status
+            </div>
+ <hr className="border-gray-600" />
+
+            <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
+              Sounds Info
+            </div>
+
+
+            </div>
+            </div>
+            <hr />
+            <div className='line bg-white p-[0.1%]'></div>
+              <div  className='w-[100%] bg-gray-800 '></div>
+            
+            
+              {/* <button onClick={() => setOpenSettings(false)}>Close Settings</button> */}
             </div>
           )}
           {openHelp && (

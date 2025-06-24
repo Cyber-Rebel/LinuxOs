@@ -15,6 +15,7 @@ const Desktop = () => {
   };
   console.log(axisX);
 
+
   return (
     <div
      
@@ -38,7 +39,7 @@ const Desktop = () => {
             </div>
             <hr className="border-gray-600" />
             <div className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-              Show Desktop in Files
+              Setthings
             </div>
             <hr className="border-gray-600" />
             <div className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
