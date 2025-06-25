@@ -63,7 +63,7 @@ const Desktop = () => {
 
       <div className="w-full h-screen ">
         <div  onMouseDown={ handleMouseDown } onClick={()=>handleMouseUp()}
-          style={{ position: "absolute", top: `${position.y}px`, bottom:`${position.x}px` }}
+          style={{ position: "absolute", top: `${position.y}px`, left:`${position.x}px` }}
           className="folder w-fit  hover:bg-gray-500 h-fit"
         >
           <img  src={Folder} alt="folder" />
