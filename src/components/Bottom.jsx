@@ -141,13 +141,13 @@ console.log(props)
 
 
             </div>
+              <button className='"hover:bg-gray-600 px-1 py-1 rounded cursor-pointer' onClick={() => setOpenSettings(false)}>Close Settings</button>
             </div>
             <hr />
             <div className='line bg-white p-[0.1%]'></div>
               <div  className='w-[100%] bg-gray-800 '></div>
             
             
-              {/* <button onClick={() => setOpenSettings(false)}>Close Settings</button> */}
             </div>
           )}
           {openHelp && (
