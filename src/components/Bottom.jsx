@@ -111,6 +111,7 @@ console.log(props)
           )}
          
           {openSettings && (<div style={{ position: 'absolute', top: '10%' }} className="w-[30%] h-[40%] flex  cursor-n-resize resize overflow-auto  bg-pink-500  ">
+              
             <div className='bg-gray-800 w-[40%] '>
                 <div className="w-full bg-gray-800 text-white rounded shadow-md border border-gray-700 p-1 px-4 space-y-1 text-[120%]   font-normal">
             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
