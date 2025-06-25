@@ -2,18 +2,21 @@ import React, { useState, useEffect } from "react";
 import Image from "../wallpaper/image.png";
 import Folder from "../assets/folder2.png";
 import Bottom from "../components/Bottom";
+import useDragable from "../utils/useDragable";
 
 const Desktop = () => {
   const [axisX, setaxisX] = useState({});
   const [open, setOpen] = useState(false);
   const [folder ,setFolder] = useState(false)
-
+ const {position , handleMouseUp, handleMouseDown} = useDragable()
   const hanldclick = (e) => {
     setOpen(!open);
     console.log(e);
     setaxisX({ X: e.screenX, Y: e.screenY });
   };
-  console.log(axisX);
+  console.log("The value of left axis aadvi"+position.x)
+  console.log("The value of Top axis Uugi"+position.y)
+
 
 
   return (
@@ -59,11 +62,11 @@ const Desktop = () => {
       </div>
 
       <div className="w-full h-screen ">
-        <div
-          style={{ position: "absolute", top: `40px` }}
+        <div  onMouseDown={ handleMouseDown } onClick={()=>handleMouseUp()}
+          style={{ position: "absolute", top: `${position.y}px`, bottom:`${position.x}px` }}
           className="folder w-fit  hover:bg-gray-500 h-fit"
         >
-          <img src={Folder} alt="folder" />
+          <img  src={Folder} alt="folder" />
           <h1 className="text-center text-ambe${pos.y}px`,r-50">RR</h1>
         </div>
 
@@ -76,3 +79,4 @@ const Desktop = () => {
 export default Desktop;
 
 // Top -- Y 
+//

@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import Folder from '../assets/folder2.png';
+import Folder from '../assets/Folder.png';
 import Brave from '../assets/brave.png';
 import App from '../assets/Ao.png';
 import Vscode from '../assets/VScode.png';
@@ -41,7 +41,7 @@ console.log(props)
      <div    className="absolute overflow-hidden  bottom-0 top-[90%] left-[38%]">
             <div className="p-5 bg-black/60 backdrop-blur-md rounded-2xl flex gap-4">
            
-          <img     name="File"  className="w-14 h-14 object-contain cursor-pointer hover:scale-110 transition-transform duration-200" onClick={()=>setopenFolder(true)} src={Folder} alt="folder" />
+          <img     name="File"  className="w-14 h-14 object-contain cursor-pointer hover:scale-110 transition-transform duration-200" onClick={()=>setopenFolder(true)} src={Folder}  alt="folder" />
           
           
               <img
@@ -156,8 +156,8 @@ console.log(props)
             </div>
           )}
              {openFolder || props.open? (
-            <div style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-cyan-900 text-white p-5">
-              <button onClick={() => setopenFolder(false)|| props.setFolder(false)}>Close Folder</button>
+            <div  style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-cyan-900 text-white p-5">
+              <button  onClick={() => setopenFolder(false)|| props.setFolder(false)}>Close Folder</button>
             </div>
           ):``}
           </>
@@ -165,3 +165,8 @@ console.log(props)
 }
 
 export default Bottom
+
+
+// Sytem ko dray elemlemt bando
+
+// fOLDER ONLY COLORM AND ROW ME FOLDER SHOW HO EK --- 3 CR---

@@ -335,3 +335,63 @@ Copy
 Edit
 <div className="absolute top-[50%]">Hello</div> // ✅ This works
 Let me know if you want to animate the position or make it random every time the user hovers — we can do that too.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import React, { useState,useEffect } from 'react';
+
+const AppC = () => {
+  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [isDragging, SetisDragging] = useState(false)
+
+ const handleMouseDown = () => {
+     SetisDragging(true);
+  };
+
+  
+  const handleMouseUp = () => {
+   SetisDragging(false);
+  }
+
+  const handleMouseMove = (e) => {
+   if (isDragging) {
+      setPosition({ x: e.clientX, y: e.clientY });
+    }
+  };
+   useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove); // ye handlemouse Move and mouse move ko parrel work hotil  ese ek  fakdat hau ki jab funcation drage to clear samjega 
+    window.addEventListener('mouseup', handleMouseUp);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging]);
+
+  return (
+    <div
+        
+      className="w-full h-screen relative bg-gray-600"
+    >
+      <div
+        onMouseDown={handleMouseDown}
+        style={{
+          position: 'absolute',
+        //   top: `${position.y}px`,
+        //   left: `${position.x}px`,
+        }}
+        className="bg-black w-10 h-10"
+      ></div>
+      <div  style={{
+          position: 'absolute',
+          top: `${position.y}px`,
+          left: `${position.x}px`,
+        }} onMouseDown={handleMouseDown} >Hello</div>
+    </div>
+  );
+};
+
+export default AppC;
+//onMouseDown → Jab user mouse se kisi element ko pakadta hai.
+
+// onMouseMove → Jab user mouse ko move karta hai (aur hum position update karte hain).
+
+// onMouseUp → Jab user mouse chhod deta hai (drag end).
