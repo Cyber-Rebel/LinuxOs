@@ -1,11 +1,13 @@
 import React, { useState,useEffect } from 'react';
-import Folder from '../assets/Folder.png';
+import Folder from '../assets/folder4.png';
 import Brave from '../assets/brave.png';
 import App from '../assets/Ao.png';
 import Vscode from '../assets/VScode.png';
 import Terminal from '../assets/Termianl2.png';
 import Settings from '../assets/Settings2.png';
 import Help from '../assets/Help.png';
+import useDragable from "../utils/useDragable";
+import Terimal from '../components/Terimal.jsx'
 
 const Bottom = (props) => {
 
@@ -17,6 +19,7 @@ console.log(props)
       const [openSettings, setOpenSettings] = useState(false);
       const [openHelp, setOpenHelp] = useState(false);
       const [openFolder,setopenFolder] = useState(false)
+  const {position , handleMouseUp, handleMouseDown} = useDragable()
 
       const handleclick = (e) => {
         const { name } = e.target;
@@ -38,7 +41,7 @@ console.log(props)
 
   return (
     <>
-     <div    className="absolute overflow-hidden  bottom-0 top-[90%] left-[38%]">
+     <div    className="absolute overflow-hidden  bottom-0 top-[90%] left-[37%]">
             <div className="p-5 bg-black/60 backdrop-blur-md rounded-2xl flex gap-4">
            
           <img     name="File"  className="w-14 h-14 object-contain cursor-pointer hover:scale-110 transition-transform duration-200" onClick={()=>setopenFolder(true)} src={Folder}  alt="folder" />
@@ -104,13 +107,9 @@ console.log(props)
               <button onClick={() => setOpenVSCode(false)}>Close VSCode</button>
             </div>
           )}
-          {openTerminal && (
-            <div style={{ position: 'absolute', top: '40%' }} className="w-[30%] h-[40%] bg-blue-500 text-white p-5">
-              <button onClick={() => setOpenTerminal(false)}>Close Terminal</button>
-            </div>
-          )}
+          {openTerminal && (<Terimal openTerminal={openTerminal} setOpenTerminal={setOpenTerminal}/>)}
          
-          {openSettings && (<div style={{ position: 'absolute', top: '10%' }} className="w-[30%] h-[40%] flex  cursor-n-resize resize overflow-auto  bg-pink-500  ">
+          {openSettings && (<div  onMouseDown={ handleMouseDown } onMouseOver={()=>handleMouseUp()}   style={{ position: 'absolute',top: `${position.y}px`, left:`${position.x}px`}} className="w-[30%] h-[40%] flex  cursor-n-resize resize overflow-auto  bg-pink-500  ">
               
             <div className='bg-gray-800 w-[40%] '>
                 <div className="w-full bg-gray-800 text-white rounded shadow-md border border-gray-700 p-1 px-4 space-y-1 text-[120%]   font-normal">
@@ -121,7 +120,7 @@ console.log(props)
              <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
               Power
             </div>
-             <hr className="border-gray-600" />
+             <hr className="border-gray-600" /> 
              <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
               Change Backgruoud
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "../wallpaper/image.png";
-import Folder from "../assets/folder2.png";
+import Folder from "../assets/folder.png";
 import Bottom from "../components/Bottom";
 import useDragable from "../utils/useDragable";
 
@@ -11,20 +11,24 @@ const Desktop = () => {
   let [data,setdata]= useState([])
   const [create,setcreate] = useState(false)
   const {position , handleMouseUp, handleMouseDown} = useDragable()
+
   const hanldclick = (e) => {
     setOpen(!open);
     console.log(e.clientX);
     setaxisX({ X: e.clientX, Y: e.clientY });
     console.log(create)
-    // if(create=='true'){
-    const Foldername = prompt("Enter The Folder name ")
-    setdata(prev=>[...prev,{x:e.clientX,y:e.clientY,Foldername}])
-  // }
+    
     e.preventDefault(); // Browser ka context menu rokta hai hamesah dyan rak bhaii ese linek me nilesh 
   };
   // console.log("The value of left axis aadvi"+position.x)
   // console.log("The value of Top axis Uugi"+position.y)
 // console.log(data[0].x) pan map madhe sirf esa karna hae data.x
+const ram = (e)=>{
+setOpen(false)
+  const Foldername = prompt("Enter The Folder name ")
+  
+    setdata(prev=>[...prev,{x:e.clientX,y:e.clientY,Foldername}])
+}
 
   return (
     <div
@@ -57,7 +61,7 @@ const Desktop = () => {
               Change Background...
             </div>
             {/* <div onClick={()=>setcreate(true)} className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"> */}
-            <div onClick={()=>setcreate(true)} className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <div onClick={ram} className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
             Create Folder
             </div>
           </div>
@@ -76,17 +80,17 @@ const Desktop = () => {
           className="folder w-fit  hover:bg-gray-500 h-fit"
         >
           <img  src={Folder} alt="folder" />
-          <h1 className="text-center">RR</h1>
+          <h1 className="text-center text-amber-50 ">RR</h1>
         </div>
 
         {data?.map((data)=>{
           return (
-            <div  onMouseDown={ handleMouseDown } onMouseOver={()=>handleMouseUp()}  // onmouseLeave ek problem haeki jab thod mouse div baher gela to kam nahi karega  // onclick to to agar ko use ese hamuse kare // onMouseOver is best in case using this.
+            <div  // onmouseLeave ek problem haeki jab thod mouse div baher gela to kam nahi karega  // onclick to to agar ko use ese hamuse kare // onMouseOver is best in case using this.
           style={{ position: "absolute", top:`${data.y}px`, left:`${data.x}px`  }}
-          className="folder w-fit  hover:bg-gray-500 h-fit"
+          className="folder w-fit   hover:bg-gray-500 h-fit"
         >
           <img  src={Folder} alt="folder" />
-          <h1 className="text-center">{data.Foldername}</h1>
+          <h1 className="text-center text-amber-50"><b>{data.Foldername}</b></h1>
         </div>
           )
         })}
