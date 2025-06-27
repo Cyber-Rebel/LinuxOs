@@ -3,6 +3,7 @@ import Headding from './components/Headding.jsx'
 import LockScreen from './components/LockScreen.jsx'
 import Hero from './components/Hero.jsx'
 import { AuthContext } from './context/Authcontext.jsx'
+import LockScreena from './components/LookScreena.jsx'
 const App = () => {
      const {Authvaid,SetAuthvaid} = useContext(AuthContext)
   useEffect(()=>{
@@ -13,7 +14,7 @@ const App = () => {
 
   console.log(Authvaid)
   return (
-    <div  >
+    <div   >
 
 
 <LockScreen/>

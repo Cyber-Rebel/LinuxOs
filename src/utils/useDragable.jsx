@@ -64,3 +64,6 @@ export default useDragable
 // abd(13) // output 13
 
 // 
+
+
+// setDraging natat -- mouse move zala natar--mouse move madhe postion set kart gelo and  mouseup par elemt sutel teva element drag tadla 

@@ -8,9 +8,6 @@ import { AuthContext } from '../context/Authcontext';
 import Desktop from '../Desktop/Desktop.jsx';
 
 const LockScreen = () => {
-  // const [show,setshow] = useState(true)
-
-  // <motion.div animate={{ x: [null, 100, 0] }} />
   const {Authvaid,SetAuthvaid} = useContext(AuthContext)
   console.log(Authvaid)
   const [enpashow, setEnpashow] = useState(true);
@@ -33,7 +30,7 @@ const LockScreen = () => {
 
 // console.log(Authvaid)
   return (<>
-     {Authvaid? <Desktop/>:( <div className="bg-[#241F21] w-full h-screen">  
+     {Authvaid? <Desktop/>:( <div className="bg-[#241F21] w-full h-[70%]">  
       {/* Authvaid ye wala agar dekha yahe to ye localStorage nahi aaraha hae  */}
       <div className="flex flex-col gap-[33%] justify-end p-10 w-[27%] h-screen ml-[38%] items-center">
         

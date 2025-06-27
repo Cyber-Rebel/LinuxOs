@@ -1,4 +1,4 @@
-@import "tailwindcss";
+  @import "tailwindcss";
 /* body {
   user-select: none;
   -webkit-user-drag: none;
@@ -7,3 +7,7 @@ img {
   pointer-events: none;
 } */
 /* en 4 line ke image and text copy nahi hoga */
+/* 
+@media  {
+  
+} */

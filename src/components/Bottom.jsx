@@ -8,7 +8,7 @@ import Settings from '../assets/Settings2.png';
 import Help from '../assets/Help.png';
 import useDragable from "../utils/useDragable";
 import Terimal from '../components/Terimal.jsx'
-
+import Braves from '../components/Brave.jsx'
 const Bottom = (props) => {
 
 console.log(props)
@@ -49,7 +49,7 @@ console.log(props)
           
               <img
                 onClick={handleclick}
-                // name="brave"
+                name="brave"
                 className="w-14 h-14 object-contain cursor-pointer hover:scale-110 transition-transform duration-200"
                 src={Brave}
                 alt=""
@@ -93,9 +93,7 @@ console.log(props)
           </div>
     
           {openBrave && (
-            <div style={{ position: 'absolute', top: '10%' }} className="w-[30%]  h-[40%] bg-amber-200 p-5">
-              <button onClick={() => setOpenBrave(false)}>Close Brave</button>
-            </div>
+          <Braves openBrave={openBrave} setOpenBrave={setOpenBrave}  />
           )}
           {openApp && (
             <div style={{ position: 'absolute', top: '20%' }} className="w-[30%] h-[40%] bg-black text-white p-5">
