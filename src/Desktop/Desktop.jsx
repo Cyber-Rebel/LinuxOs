@@ -6,8 +6,10 @@ import useDragable from "../utils/useDragable";
 import Ubuntu6 from "../assets/Background/Ubuntu6.png";
 import Githubs from "../assets/Github1.png";
 import Uicontext from "../context/Uicontext.jsx";
-
+import Youtuber from '../assets/Youtube.png'
 import Github from "../components/Github.jsx";
+import Youtubess from  '../components/Youtubess.jsx'
+
 
 import ChangeBackground from "../utils/ChangeBackground";
 const Desktop = () => {
@@ -21,6 +23,7 @@ const Desktop = () => {
   const { position, handleMouseUp, handleMouseDown } = useDragable();
   const [change, setChange] = useState(false);
   const [LockScreen, setLockScreen] = useState(true);
+  const [Youtube,setYoutube] = useState(false)
 
   const [BackgrondImage, setBackgroundImage] = useState(Image);
 
@@ -138,7 +141,29 @@ const Desktop = () => {
                 Search
               </h1>
             </div>
+             <div
+                onClick={() => setYoutube(!Youtube)}
+              style={{
+                position: "absolute",
+                top: "300px",
+                left: "20px",
+                cursor: "pointer",
+                transition: "all 0.3s ease-in-out",
+              }}
+              className="rounded-xl bg-transparent  hover:scale-105"
+              >
+              <img
+                className="w-20 h-20 object-contain mx-auto transition-transform "
+                src={Youtuber}
+                alt="folder"
+              />
+              <h1 className="text-center  text-white">
+               Sheriyans Coding<br />
+                School
+              </h1>
+            </div>
             {opengithub ? <Github setgithub={setgithub} /> : ""}
+            {Youtube ? <Youtubess setYoutube={setYoutube}/>:""}
 
             {data?.map((data) => {
               return (
@@ -158,7 +183,7 @@ const Desktop = () => {
               );
             })}
 
-            <Bottom open={folder} setFolder={setFolder} />
+            <Bottom  Folderss={data} open={folder} setFolder={setFolder} />
           </div>
         </div>
       ) : (

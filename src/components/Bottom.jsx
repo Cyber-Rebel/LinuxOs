@@ -11,7 +11,9 @@ import Terimal from '../components/Terimal.jsx'
 import Braves from '../components/Brave.jsx'
 import VsCode from '../components/VsCode.jsx'
 import Settingsg from '../components/Settings.jsx'
+import Folderrr from '../components/Folderrr.jsx'
 const Bottom = (props) => {
+  console.log(props.Folderss)
 
 console.log(props)
       const [openBrave, setOpenBrave] = useState(false);
@@ -43,7 +45,7 @@ console.log(props)
 
   return (
     <>
-     <div    className="absolute overflow-hidden  bottom-0 top-[90%] left-[37%]">
+     <div    className="absolute overflow-hidden  bottom-0 top-[90%] left-[40%]">
             <div className="p-5 bg-black/60 backdrop-blur-md rounded-2xl flex gap-4">
            
           <img     name="File"  className="w-14 h-14 object-contain cursor-pointer hover:scale-110 transition-transform duration-200" onClick={()=>setopenFolder(true)} src={Folder}  alt="folder" />
@@ -56,13 +58,7 @@ console.log(props)
                 src={Brave}
                 alt=""
               />
-              <img
-                onClick={handleclick}
-                name="App"
-                className="w-14 h-14 object-contain cursor-pointer hover:scale-110 transition-transform duration-200"
-                src={App}
-                alt=""
-              />
+         
               <img
                 onClick={handleclick}
                 name="VScode"
@@ -116,9 +112,11 @@ console.log(props)
             </div>
           )}
              {openFolder || props.open? (
-            <div  style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-cyan-900 text-white p-5">
-              <button  onClick={() => setopenFolder(false)|| props.setFolder(false)}>Close Folder</button>
-            </div>
+
+              <Folderrr Folderss={props.Folderss}   setopenFolder={setopenFolder} />
+            // <div  style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-cyan-900 text-white p-5">
+            //   <button  onClick={() => setopenFolder(false)|| props.setFolder(false)}>Close Folder</button>
+            // </div>
           ):``}
           </>
   )
