@@ -26,11 +26,11 @@ console.log(width.h)
       <div className="bg-[#1E1E1E] rounded-md flex flex-col overflow-hidden shadow-lg w-full h-full ">
         <div className='navsection'>
 <div className="w-full flex items-center justify-between bg-[#2D2D2D] p-1">
-          <div className="flex items-center gap-2  ">
+          <div className="flex items-center  gap-2  ">
              <div
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
-              className="w-5 h-5 bg-cyan-500 rounded-full relative"
+              className="w-5 h-5 bg-cyan-500 rounded-full cursor-alias relative"
             ></div>
             <div onClick={bool?handle:rizemin} className="w-5 h-5 bg-yellow-400 rounded-full"></div>
            

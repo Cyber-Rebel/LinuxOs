@@ -31,7 +31,7 @@ console.log(width.h)
              <div
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
-              className="w-5 h-5 bg-cyan-500 rounded-full relative"
+              className="w-5 h-5 cursor-alias bg-cyan-500 rounded-full relative"
             ></div>
             <div onClick={bool?handle:rizemin} className="w-5 h-5 bg-yellow-400 rounded-full"></div>
            
