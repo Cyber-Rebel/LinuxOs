@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import useDragable from "../utils/useDragable";
 import { IoRemoveCircleSharp } from "react-icons/io5";
 
-const Terminal = ({openBrave,setOpenBrave}) => {
+const Terminal = ({setOpenSettings}) => {
     const [width,setwidth]= useState({w:30,h:40})    
     const [bool,setbool]= useState(true)
   const { position, handleMouseUp, handleMouseDown } = useDragable();
@@ -34,7 +34,7 @@ console.log(width.h)
             ></div>
             <div onClick={bool?handle:rizemin} className="w-5 h-5 bg-yellow-400 rounded-full"></div>
            
-                        <div onClick={()=>setOpenBrave(false)} className="  text-red-600 "><IoRemoveCircleSharp className='w-6 h-6' /></div>
+                        <div onClick={()=>setOpenSettings(false)} className="  text-red-600 "><IoRemoveCircleSharp className='w-6 h-6' /></div>
 
           </div>
           <span className="text-xs text-gray-400 pr-2">
@@ -43,11 +43,43 @@ console.log(width.h)
         </div>
         </div>
             <div className='  w-full h-full'>
-
-<iframe src="http://127.0.0.1:5500/index.html" className='w-full h-full ' frameborder="0"></iframe>
+                <div className="w-full bg-gray-800 text-white rounded shadow-md border border-gray-700 p-1 px-4 space-y-1 text-[120%]   font-normal">
+            <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              System Info
             </div>
-      </div>
-    </div>
+             <hr className="border-gray-600 w-full" />
+             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Power
+            </div>
+             <hr className="border-gray-600" /> 
+             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+              Change Backgruoud
+            </div>
+ <hr className="border-gray-600 " />
+                         <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
+              Network Info
+            </div>
+ <hr className="border-gray-600" />
+
+   <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
+              Battery Status
+            </div>
+ <hr className="border-gray-600" />
+
+            <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
+              Sounds Info
+            </div>
+
+
+            </div>
+            </div>
+            <hr />
+            <div className='line bg-white p-[0.1%]'></div>
+              <div  className='w-[100%] bg-gray-800 '></div>
+            
+            
+            </div>
+            </div>
   );
 };
 

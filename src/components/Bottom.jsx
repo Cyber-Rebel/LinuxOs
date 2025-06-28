@@ -10,6 +10,7 @@ import useDragable from "../utils/useDragable";
 import Terimal from '../components/Terimal.jsx'
 import Braves from '../components/Brave.jsx'
 import VsCode from '../components/VsCode.jsx'
+import Settingsg from '../components/Settings.jsx'
 const Bottom = (props) => {
 
 console.log(props)
@@ -107,49 +108,10 @@ console.log(props)
           )}
           {openTerminal && (<Terimal openTerminal={openTerminal} setOpenTerminal={setOpenTerminal}/>)}
          
-          {openSettings && (<div  onMouseDown={ handleMouseDown } onMouseOver={()=>handleMouseUp()}   style={{ position: 'absolute',top: `${position.y}px`, left:`${position.x}px`}} className="w-[30%] h-[40%] flex  cursor-n-resize resize overflow-auto  bg-pink-500  ">
-              
-            <div className='bg-gray-800 w-[40%] '>
-                <div className="w-full bg-gray-800 text-white rounded shadow-md border border-gray-700 p-1 px-4 space-y-1 text-[120%]   font-normal">
-            <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-              System Info
-            </div>
-             <hr className="border-gray-600 w-full" />
-             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-              Power
-            </div>
-             <hr className="border-gray-600" /> 
-             <div  className="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-              Change Backgruoud
-            </div>
- <hr className="border-gray-600 " />
-                         <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
-              Network Info
-            </div>
- <hr className="border-gray-600" />
-
-   <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
-              Battery Status
-            </div>
- <hr className="border-gray-600" />
-
-            <div  className="hover:bg-gray-600 px-1 py-1 rounded cursor-pointer">
-              Sounds Info
-            </div>
-
-
-            </div>
-              <button className='"hover:bg-gray-600 px-1 py-1 rounded cursor-pointer' onClick={() => setOpenSettings(false)}>Close Settings</button>
-            </div>
-            <hr />
-            <div className='line bg-white p-[0.1%]'></div>
-              <div  className='w-[100%] bg-gray-800 '></div>
-            
-            
-            </div>
-          )}
+          {openSettings && (<Settingsg  setOpenSettings={ setOpenSettings}        />)}
           {openHelp && (
             <div style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-slate-900 text-white p-5">
+              
               <button onClick={() => setOpenHelp(false)}>Close Help</button>
             </div>
           )}
@@ -168,3 +130,4 @@ export default Bottom
 // Sytem ko dray elemlemt bando
 
 // fOLDER ONLY COLORM AND ROW ME FOLDER SHOW HO EK --- 3 CR---
+ 

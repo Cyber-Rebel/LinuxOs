@@ -39,7 +39,7 @@ console.log(width.h)
 
           </div>
           <span className="text-xs text-gray-400 pr-2">
-            cyber-rebel@HP-EliteBook-840-G5:~/Desktop/LinuxOS
+            codebreaker@Acer-Predator-Helios:~/Desktop/LinuxOS
           </span>
         </div>
         </div>
