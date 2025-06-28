@@ -17,11 +17,11 @@ const LockScreen = () => {
   
   const formdata=(data)=>{
       if(localStorage.getItem('password')===data.password){
-        alert('user is found  you can login ')
+        alert('Password Is Correct You Can Login  ')
         localStorage.setItem('valid',true)
         SetAuthvaid(true)
       }else{
-        alert('user password should correct')
+        alert('Incorrect Password')
       }
   reset()
 
