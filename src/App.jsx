@@ -12,7 +12,6 @@ const App = () => {
     //  localStorage.setItem('valid',false)
   }},[])
 
-  console.log(Authvaid)
   return (
     <div   >
 

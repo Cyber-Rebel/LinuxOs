@@ -9,6 +9,7 @@ import Help from '../assets/Help.png';
 import useDragable from "../utils/useDragable";
 import Terimal from '../components/Terimal.jsx'
 import Braves from '../components/Brave.jsx'
+import VsCode from '../components/VsCode.jsx'
 const Bottom = (props) => {
 
 console.log(props)
@@ -101,9 +102,8 @@ console.log(props)
             </div>
           )}
           {openVSCode && (
-            <div style={{ position: 'absolute', top: '30%' }} className="w-[30%] h-[40%] bg-red-200 p-5">
-              <button onClick={() => setOpenVSCode(false)}>Close VSCode</button>
-            </div>
+         
+            <VsCode setVsCode={setOpenVSCode}/>
           )}
           {openTerminal && (<Terimal openTerminal={openTerminal} setOpenTerminal={setOpenTerminal}/>)}
          

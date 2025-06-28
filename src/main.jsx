@@ -5,12 +5,11 @@ import App from './App.jsx'
 import AuthWapper  from './context/Authcontext.jsx'
 import Uicontext from './context/Uicontext.jsx'
 createRoot(document.getElementById('root')).render(
+      <Uicontext>
 <AuthWapper> 
 
    <App/>
 </AuthWapper>
 
+</Uicontext>
 )
-
-//    <Uicontext>
-// </Uicontext>
