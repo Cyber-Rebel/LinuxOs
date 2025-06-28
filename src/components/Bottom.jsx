@@ -106,10 +106,19 @@ console.log(props)
          
           {openSettings && (<Settingsg  setOpenSettings={ setOpenSettings}        />)}
           {openHelp && (
-            <div style={{ position: 'absolute', top: '60%' }} className="w-[30%] h-[40%] bg-slate-900 text-white p-5">
-              
-              <button onClick={() => setOpenHelp(false)}>Close Help</button>
-            </div>
+            <div
+  style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+  className="w-[30%] h-[40%] bg-slate-900 text-white p-5 flex flex-col items-center justify-center text-center"
+>
+  <p className="mb-4 text-lg font-semibold">Still Working</p>
+  <button
+    onClick={() => setOpenHelp(false)}
+    className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+  >
+    Close Help
+  </button>
+</div>
+
           )}
              {openFolder || props.open? (
 

@@ -59,7 +59,7 @@ const folders = [
 
 
      {Folderss.length < 0 ? (
-  <div className="text-white text-3xl ">First Create A Folder By Right Click</div>
+      <div className="text-white text-3xl  ">First Create A Folder By Right Click</div>
 ) : (
   <div className="grid grid-cols-6 gap-4">
     {Folderss.map((folder, index) => (
